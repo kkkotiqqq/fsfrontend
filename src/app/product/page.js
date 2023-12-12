@@ -1,0 +1,5 @@
+export default function Home() {
+  return (
+    <main className="flex min-h-screen flex-col justify-between">123</main>
+  );
+}

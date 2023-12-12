@@ -17,11 +17,15 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #202526;
+  background: #f4f4f4;
+  @apply font-light;
+}
+
+.swiper-pagination {
+  @apply !bottom-28;
+}
+
+.swiper-pagination-bullet {
+  @apply !bg-white !w-4 !h-4;
 }
