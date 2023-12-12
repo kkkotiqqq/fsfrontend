@@ -20,6 +20,8 @@ export default function Home() {
           </div>
         </div>
 
+        <div>New commit</div>
+
         <section className="mt-8 mb-8">
           <div className="grid grid-cols-6">
             <div className="col-span-6 lg:col-span-2">
