@@ -23,9 +23,31 @@ body {
 }
 
 .swiper-pagination {
-  @apply !bottom-28;
+  @apply !bottom-5 md:!bottom-28;
 }
 
 .swiper-pagination-bullet {
   @apply !bg-white !w-4 !h-4;
+}
+
+.hamburger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+/* Анимация для трансформации в крестик */
+.hamburger-line.transform.top {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-line.transform.middle {
+  opacity: 0;
+}
+
+.hamburger-line.transform.bottom {
+  transform: translateY(-8px) rotate(-45deg);
 }

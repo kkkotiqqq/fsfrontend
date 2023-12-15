@@ -55,10 +55,10 @@ export default function ContactForm() {
         placeholder="Имя"
         value={formData.name}
         onChange={handleChange}
-        className="w-full bg-white rounded-xl h-12 text-center mb-7"
+        className="w-full bg-white rounded-xl h-12 text-center mb-3 lg:mb-7"
       />
 
-      <div className="grid grid-cols-2 gap-x-5 gap-y-7 mb-7">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-3 mb-3 lg:mb-7">
         <input
           type="email"
           id="email"
@@ -89,7 +89,7 @@ export default function ContactForm() {
         className="w-full bg-white rounded-xl h-40 text-center p-5"
       />
 
-      <div className="grid grid-cols-2 gap-x-5 gap-y-7 mt-7 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-4 mt-7 items-center">
         <input
           type="file"
           id="file"
@@ -100,8 +100,8 @@ export default function ContactForm() {
       file:mr-4 file:py-2 file:px-4
       file:rounded-full file:border-0
       file:text-sm file:font-semibold
-      file:bg-violet-50 file:text-violet-700
-      hover:file:bg-violet-100"
+      file:bg-yellow-50 file:text-yellow-700
+      hover:file:bg-yellow-200 cursor-pointer"
         />
 
         <button

@@ -6,8 +6,8 @@ export default function FullSlider() {
     <>
       <div className="bg-[#323232] text-white pt-11 pb-11 mt-20">
         <div className="container">
-          <div className="grid grid-cols-2 gap-[200px]">
-            <div className="flex gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[200px]">
+            <div className="flex max-md:flex-col gap-5">
               <Link
                 href="tel:000000000"
                 className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto uppercase font-normal"
@@ -21,7 +21,7 @@ export default function FullSlider() {
                 <span>sales@fslight.net</span>
               </Link>
             </div>
-            <div className="flex gap-5">
+            <div className="flex max-md:flex-col gap-5">
               <Link
                 href="/"
                 className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
