@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <SiteHeader />
 
-        <div className="pt-20 lg:pt-40">{children}</div>
+        <div className="pt-20 xl:pt-40">{children}</div>
 
         <SiteFooter />
       </body>

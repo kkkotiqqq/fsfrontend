@@ -33,7 +33,7 @@ export default function SiteHeader() {
 
           <ul className="flex xl:gap-7 2xl:gap-14 xl:ml-20 2xl:ml-40 text-lg uppercase tracking-wide text-white max-xl:hidden">
             <li>
-              <Link href="/about">О студии</Link>
+              <Link href="/">О студии</Link>
             </li>
             <li>
               <Link href="/catalog">Каталог</Link>

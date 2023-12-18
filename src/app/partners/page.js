@@ -13,15 +13,15 @@ export default function Home() {
             Сотрудничество ради стиля
           </div>
 
-          <p className="mb-5 lg:mb-5 lg:mb-10 max-w-4xl break-words break-words">
+          <p className="mb-5 lg:mb-5 xl:mb-10 max-w-4xl break-words">
             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           </p>
-          <p className="mb-5 lg:mb-5 lg:mb-10 max-w-4xl break-words break-words">
+          <p className="mb-5 lg:mb-5 xl:mb-10 max-w-4xl break-words">
             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           </p>
-          <p className="mb-5 lg:mb-5 lg:mb-10 max-w-4xl break-words break-words">
+          <p className="mb-5 lg:mb-5 xl:mb-10 max-w-4xl break-words">
             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           </p>
