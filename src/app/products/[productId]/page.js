@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import ThumbSlider from "@/app/components/ThumbSlider";
 import { getProduct } from "@/app/actions/getProduct";
+import ContactPopup from "@/app/components/ContactPopup";
+import OrderPopup from "@/app/components/OrderPopup";
 
 function renderRichText(content) {
   return content.map((item, index) => {
@@ -132,30 +134,20 @@ export default async function Product({ params: { productId } }) {
                 </div>
               )}
             </div>
-            <div className="mt-7 lg:mt-14 pt-3 lg:pt-7 border-t border-dashed border-[#C0C0C0]">
-              <div className="lg:text-xl font-medium mb-4">
-                Возможные дополнительные опции
-              </div>
+            {product.data.attributes.additionalOptions && (
+              <div className="mt-7 lg:mt-14 pt-3 lg:pt-7 border-t border-dashed border-[#C0C0C0]">
+                <div className="lg:text-xl font-medium mb-4">
+                  Возможные дополнительные опции
+                </div>
 
-              <div className="lg:text-lg">
-                {renderRichText(product.data.attributes.additionalOptions)}
+                <div className="lg:text-lg">
+                  {renderRichText(product.data.attributes.additionalOptions)}
+                </div>
               </div>
-            </div>
-            <Link
-              href="#"
-              className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-7 flex items-center justify-center shadow-lg shadow-black/30 text-white mx-auto font-normal gap-1 uppercase mt-7 lg:mt-14"
-            >
-              <span>Заказать</span>
-            </Link>
-            <Link
-              href="#"
-              className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-10 flex items-center justify-center shadow-lg shadow-black/30 text-white mx-auto font-normal gap-1 uppercase text-center max-lg:text-sm"
-            >
-              <span>
-                Есть вопросы? <br className="lg:hidden" /> Отправьте сообщение в
-                1 клик
-              </span>
-            </Link>
+            )}
+
+            <OrderPopup product={product.data.attributes.title} />
+            <ContactPopup />
 
             {product.data.attributes.dimensions &&
               product.data.attributes.dimensions.length > 0 && (
