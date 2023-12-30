@@ -128,7 +128,6 @@ export default async function Partners() {
             ))}
           </div>
         </div>
-        <div></div>
         <div className="lg:col-span-2">
           <Image
             src={
