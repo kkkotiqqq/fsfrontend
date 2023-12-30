@@ -4,18 +4,13 @@ import React from "react";
 
 async function getProducts() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/products?populate[cover]=*`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/products?populate[cover]=*&sort=publishedAt:desc&pagination[limit]=8`,
     {
       next: { revalidate: 60 },
     }
   );
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/products?populate[cover]=*&sort=publishedAt:desc&pagination[limit]=8`,
-  //   { cache: "no-store" }
-  // );
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
