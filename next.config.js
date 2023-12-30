@@ -10,6 +10,12 @@ const nextConfig = {
         protocol: "https",
         hostname: "fslight.paxcore.ru",
       },
+      {
+        protocol: "http",
+        hostname: "89.111.174.239",
+        port: "7777",
+        pathname: "/fslight.paxcore.ru/**", // Добавьте ** для соответствия всем путям на этом хосте
+      },
     ],
   },
 };
