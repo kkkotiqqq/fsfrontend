@@ -22,7 +22,7 @@ async function getPartners() {
 
 export default async function Partners() {
   const partnerResponse = await fetch(
-    "http://localhost:1337/api/partner?populate=*"
+    `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/partner?populate=*`
   );
   const responseData = await partnerResponse.json();
 
