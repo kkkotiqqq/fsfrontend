@@ -66,7 +66,6 @@ export default async function Partners() {
           <Image
             src={
               process.env.NEXT_PUBLIC_BASE_URL +
-              process.env.NEXT_PUBLIC_API_PATH +
               designersImage.data.attributes.url
             }
             width={740}
