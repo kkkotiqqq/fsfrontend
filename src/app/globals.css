@@ -73,3 +73,7 @@ body {
 .swiper-button-prev:after {
   @apply hidden;
 }
+
+.popup-content {
+  @apply !border-none !bg-transparent !w-full;
+}

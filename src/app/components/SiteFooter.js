@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function FullSlider() {
+export default function SiteFooter({
+  phone,
+  phoneCode,
+  email,
+  telegram,
+  whatsapp,
+  pinterest,
+}) {
   return (
     <>
       <div className="bg-[#323232] text-white pt-11 pb-11 mt-20">
@@ -9,21 +16,21 @@ export default function FullSlider() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[200px]">
             <div className="flex max-md:flex-col gap-5">
               <Link
-                href="tel:000000000"
+                href={`tel:${phoneCode}`}
                 className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto uppercase font-normal"
               >
-                <span>+7 (000) 000-00-00</span>
+                <span>{phone}</span>
               </Link>
               <Link
                 href="mailto:sales@fslight.net"
                 className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal"
               >
-                <span>sales@fslight.net</span>
+                <span>{email}</span>
               </Link>
             </div>
             <div className="flex max-md:flex-col gap-5">
               <Link
-                href="/"
+                href={telegram}
                 className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
               >
                 <Image
@@ -37,7 +44,7 @@ export default function FullSlider() {
                 <span>Telegram</span>
               </Link>
               <Link
-                href="/"
+                href={whatsapp}
                 className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
               >
                 <Image
@@ -50,7 +57,7 @@ export default function FullSlider() {
                 <span>Whatsapp</span>
               </Link>
               <Link
-                href="/"
+                href={pinterest}
                 className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
               >
                 <Image

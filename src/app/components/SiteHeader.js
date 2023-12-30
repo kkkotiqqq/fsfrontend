@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function SiteHeader() {
+export default function SiteHeader({ phone, phoneCode }) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const HomeClass = isHomePage
@@ -36,7 +36,7 @@ export default function SiteHeader() {
               <Link href="/">О студии</Link>
             </li>
             <li>
-              <Link href="/catalog">Каталог</Link>
+              <Link href="/products">Каталог</Link>
             </li>
             <li>
               <Link href="/partners">Партнёрам</Link>
@@ -49,7 +49,7 @@ export default function SiteHeader() {
             href="tel:000000000"
             className="ml-auto bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[285px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white max-xl:hidden"
           >
-            <span>+7 (000) 000-00-00</span>
+            <span>{phone}</span>
           </Link>
 
           <button
@@ -90,7 +90,7 @@ export default function SiteHeader() {
                 </Link>
               </li>
               <li className="">
-                <Link href="/catalog" onClick={toggleMenu}>
+                <Link href="/products" onClick={toggleMenu}>
                   Каталог
                 </Link>
               </li>
