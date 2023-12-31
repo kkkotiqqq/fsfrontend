@@ -6,7 +6,7 @@ async function getProducts() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/products?populate[cover]=*&sort=publishedAt:desc&pagination[limit]=8`,
     {
-      next: { revalidate: 60 },
+      cache: "force-cache",
     }
   );
 

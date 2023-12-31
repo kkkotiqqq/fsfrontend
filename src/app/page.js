@@ -8,7 +8,7 @@ async function getHomeInfo() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/home?populate[fullscreenBanner][populate]=image`,
     {
-      next: { revalidate: 60 },
+      cache: "force-cache",
     }
   );
 

@@ -176,3 +176,16 @@ export default async function Product({ params: { productId } }) {
     </>
   );
 }
+
+// export async function generateStaticParams() {
+//   const products = await fetch(
+//     `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/products?populate[cover]=*`,
+//     {
+//       cache: "force-cache",
+//     }
+//   );
+
+//   return products.map((product) => ({
+//     productId: product.data.id,
+//   }));
+// }
