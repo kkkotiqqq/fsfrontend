@@ -72,8 +72,6 @@ export default async function Home() {
           >
             {/* {JSON.stringify(productsWP, null, 2)} */}
           </pre>
-
-          <ProductsCatalogWP />
         </div>
 
         <section className="mt-8 mb-8">
@@ -134,11 +132,11 @@ export default async function Home() {
           </div>
         </section>
 
-        <ProductsCatalog />
+        <ProductsCatalogWP />
 
         <div className="container mx-auto mb-16">
           <Link
-            href="/products"
+            href="/productswp"
             className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto mt-6 uppercase text-xl"
           >
             <span>Смотреть все изделия</span>

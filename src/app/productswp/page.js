@@ -1,3 +1,4 @@
+import ProductsCatalog from "../components/ProductsCatalog";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
@@ -17,7 +18,7 @@ async function getProductsWP() {
   return res.json();
 }
 
-export default async function ProductsCatalog() {
+export default async function ProductsWP() {
   const products = await getProductsWP();
 
   return (

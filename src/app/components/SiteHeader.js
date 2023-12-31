@@ -36,7 +36,7 @@ export default function SiteHeader({ phone, phoneCode }) {
               <Link href="/">О студии</Link>
             </li>
             <li>
-              <Link href="/products">Каталог</Link>
+              <Link href="/productswp">Каталог</Link>
             </li>
             <li>
               <Link href="/partners">Партнёрам</Link>
@@ -90,7 +90,7 @@ export default function SiteHeader({ phone, phoneCode }) {
                 </Link>
               </li>
               <li className="">
-                <Link href="/products" onClick={toggleMenu}>
+                <Link href="/productswp" onClick={toggleMenu}>
                   Каталог
                 </Link>
               </li>

@@ -21,28 +21,21 @@ export default function ThumbSlider(images) {
 
   return (
     <>
-      {images && Array.isArray(images.images.data) && (
+      {images && Array.isArray(images.images) && (
         <Swiper
           spaceBetween={10}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs]}
           className="mySwiper2 select-none"
         >
-          {images.images.data.map((image, index) => (
+          {images.images.map((image, index) => (
             <SwiperSlide key={index}>
-              <Image
-                src={`${
-                  process.env.NEXT_PUBLIC_BASE_URL + image.attributes.url
-                }`}
-                width={image.attributes.width}
-                height={image.attributes.height}
-              />
+              <Image src={`${image}`} width={1000} height={1000} />
             </SwiperSlide>
           ))}
         </Swiper>
       )}
-
-      {images && Array.isArray(images.images.data) && (
+      {images && Array.isArray(images.images) && (
         <div className="mt-5 relative">
           <div className="swiper-nav flex gap-4 items-center justify-end ml-auto w-28 ">
             <div className="swiper-button-prev relative flex items-center justify-center cursor-pointer xl:!-left-9 select-none max-xl:max-w-[13px]">
@@ -88,15 +81,9 @@ export default function ThumbSlider(images) {
             }}
             className="mySwiper select-none "
           >
-            {images.images.data.map((image, index) => (
+            {images.images.map((image, index) => (
               <SwiperSlide key={index}>
-                <Image
-                  src={`${
-                    process.env.NEXT_PUBLIC_BASE_URL + image.attributes.url
-                  }`}
-                  width={image.attributes.width}
-                  height={image.attributes.height}
-                />
+                <Image src={`${image}`} width={1000} height={1000} />
               </SwiperSlide>
             ))}
           </Swiper>

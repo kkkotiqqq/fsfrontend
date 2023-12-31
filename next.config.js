@@ -7,8 +7,8 @@ const nextConfig = {
         hostname: "localhost",
       },
       {
-        protocol: "http",
-        hostname: "fslight.paxcore.ru",
+        protocol: "https",
+        hostname: "fsladmin.paxcore.ru",
       },
       {
         protocol: "http",
