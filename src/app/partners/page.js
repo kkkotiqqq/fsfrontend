@@ -64,10 +64,7 @@ export default async function Partners() {
         </div>
         <div className="lg:col-span-2">
           <Image
-            src={
-              process.env.NEXT_PUBLIC_BASE_URL +
-              designersImage.data.attributes.url
-            }
+            src={"/partn1.png"}
             width={740}
             height={550}
             alt=""
@@ -79,10 +76,7 @@ export default async function Partners() {
       <div className="grid grid-cols-1 lg:grid-cols-5 mt-5 lg:mt-20 max-lg:px-4">
         <div className="lg:col-span-2">
           <Image
-            src={
-              process.env.NEXT_PUBLIC_BASE_URL +
-              dealersImage.data.attributes.url
-            }
+            src={"/partn2.png"}
             width={740}
             height={550}
             alt=""
@@ -130,9 +124,7 @@ export default async function Partners() {
         </div>
         <div className="lg:col-span-2">
           <Image
-            src={
-              process.env.NEXT_PUBLIC_BASE_URL + optImage.data.attributes.url
-            }
+            src={"/partn3.png"}
             width={740}
             height={550}
             alt=""
