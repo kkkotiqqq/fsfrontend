@@ -137,7 +137,7 @@ export default async function Home() {
         <div className="container mx-auto mb-16">
           <Link
             href="/productswp"
-            className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto mt-6 uppercase text-xl"
+            className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[760px] flex items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 shadow-yellow-500 text-white mx-auto mt-6 uppercase text-xl"
           >
             <span>Смотреть все изделия</span>
           </Link>
@@ -175,7 +175,7 @@ export default async function Home() {
             </div>
             <Link
               href={"/partners"}
-              className="text-[#FDEB04] uppercase text-xl tracking-[8px] font-extralight mt-8 lg:mt-16 block"
+              className="text-[#FDEB04] uppercase text-xl tracking-[8px] hover:tracking-wider transition-all font-extralight mt-8 lg:mt-16 block"
             >
               <svg
                 className="max-w-full mb-4"

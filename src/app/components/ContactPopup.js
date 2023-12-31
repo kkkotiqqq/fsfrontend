@@ -8,7 +8,7 @@ export default function ContactPopup() {
   return (
     <Popup
       trigger={
-        <button className="button bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-10 flex items-center justify-center shadow-lg shadow-black/30 text-white mx-auto font-normal gap-1 uppercase text-center max-lg:text-sm">
+        <button className="button bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-10 flex items-center justify-center shadow-lg shadow-black/30 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto font-normal gap-1 uppercase text-center max-lg:text-sm">
           <span>
             Есть вопросы? <br className="lg:hidden" /> Отправьте сообщение в 1
             клик

@@ -74,7 +74,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-md shadow-yellow-400 text-white mx-auto font-normal relative"
+          className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-md shadow-yellow-400 text-white mx-auto font-normal relative transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500"
         >
           {isSubmitting ? "Отправка..." : "Отправить"}
         </button>

@@ -17,13 +17,13 @@ export default function SiteFooter({
             <div className="flex max-md:flex-col gap-5">
               <Link
                 href={`tel:${phoneCode}`}
-                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto uppercase font-normal"
+                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto uppercase font-normal"
               >
                 <span>{phone}</span>
               </Link>
               <Link
                 href="mailto:sales@fslight.net"
-                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal"
+                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto font-normal"
               >
                 <span>{email}</span>
               </Link>
@@ -31,7 +31,7 @@ export default function SiteFooter({
             <div className="flex max-md:flex-col gap-5">
               <Link
                 href={telegram}
-                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
+                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
               >
                 <Image
                   src={"/icons/telegram-y.svg"}
@@ -45,7 +45,7 @@ export default function SiteFooter({
               </Link>
               <Link
                 href={whatsapp}
-                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
+                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
               >
                 <Image
                   src={"/icons/whatsapp-y.svg"}
@@ -58,7 +58,7 @@ export default function SiteFooter({
               </Link>
               <Link
                 href={pinterest}
-                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
+                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-lg shadow-yellow-500 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto font-normal relative pl-6"
               >
                 <Image
                   src={"/icons/pinterest-y.svg"}

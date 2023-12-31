@@ -33,21 +33,38 @@ export default function SiteHeader({ phone, phoneCode }) {
 
           <ul className="flex xl:gap-7 2xl:gap-14 xl:ml-20 2xl:ml-40 text-lg uppercase tracking-wide text-white max-xl:hidden">
             <li>
-              <Link href="/">О студии</Link>
+              <Link href="/" className="transition-all hover:text-yellow-500">
+                О студии
+              </Link>
             </li>
             <li>
-              <Link href="/productswp">Каталог</Link>
+              <Link
+                href="/productswp"
+                className="transition-all hover:text-yellow-500"
+              >
+                Каталог
+              </Link>
             </li>
             <li>
-              <Link href="/partners">Партнёрам</Link>
+              <Link
+                href="/partners"
+                className="transition-all hover:text-yellow-500"
+              >
+                Партнёрам
+              </Link>
             </li>
             <li>
-              <Link href="/contacts">Контакты</Link>
+              <Link
+                href="/contacts"
+                className="transition-all hover:text-yellow-500"
+              >
+                Контакты
+              </Link>
             </li>
           </ul>
           <Link
             href="tel:000000000"
-            className="ml-auto bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[285px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white max-xl:hidden"
+            className="ml-auto bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[285px] flex items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 shadow-yellow-500 text-white max-xl:hidden"
           >
             <span>{phone}</span>
           </Link>
@@ -85,7 +102,7 @@ export default function SiteHeader({ phone, phoneCode }) {
           <div className="bg-black border border-white/20 bg-opacity-75 backdrop-blur-lg rounded-2xl shadow-yellow-400 shadow-2xl">
             <ul className="flex flex-col items-center justify-center gap-4 py-4 uppercase tracking-widest font-bold">
               <li className="">
-                <Link href="/about" onClick={toggleMenu}>
+                <Link href="/" onClick={toggleMenu}>
                   О студии
                 </Link>
               </li>

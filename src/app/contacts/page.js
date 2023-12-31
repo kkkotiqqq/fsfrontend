@@ -45,14 +45,14 @@ export default async function Contacts() {
             </div>
             <Link
               href={`tel:${phoneCode}`}
-              className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-10 flex items-center justify-center shadow-lg shadow-black/30 text-white mx-auto uppercase font-normal gap-1"
+              className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-10 flex items-center justify-center shadow-lg shadow-black/30 text-white transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 mx-auto uppercase font-normal gap-1"
             >
               <span className="max-lg:hidden">Позвонить: </span>
               <span>{phone}</span>
             </Link>
             <Link
               href="mailto:sales@fslight.net"
-              className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-10 flex items-center justify-center shadow-lg shadow-black/30 text-white mx-auto font-normal gap-1 uppercase"
+              className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-10 flex items-center justify-center shadow-lg shadow-black/30 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto font-normal gap-1 uppercase"
             >
               <span className="max-lg:hidden">Написать email: </span>
               <span>{email}</span>
@@ -61,21 +61,21 @@ export default async function Contacts() {
               <Link
                 href={telegram}
                 target="_blank"
-                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-md shadow-black/30 text-white mx-auto font-normal relative"
+                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-md shadow-black/30 text-white mx-auto font-normal relative transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500"
               >
                 <span>Telegram</span>
               </Link>
               <Link
                 href={whatsapp}
                 target="_blank"
-                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-md shadow-black/30 text-white mx-auto font-normal relative"
+                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-md shadow-black/30 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto font-normal relative"
               >
                 <span>Whatsapp</span>
               </Link>
               <Link
                 href={pinterest}
                 target="_blank"
-                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-md shadow-black/30 text-white mx-auto font-normal relative"
+                className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full flex items-center justify-center shadow-md shadow-black/30 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto font-normal relative"
               >
                 <span>Pinterest</span>
               </Link>
@@ -102,14 +102,14 @@ export default async function Contacts() {
             <Link
               href={yandexMap}
               target="_blank"
-              className="bg-[#202526] border text-center max-md:text-sm border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-3 flex items-center justify-center shadow-lg shadow-black/30 text-white mx-auto uppercase font-normal"
+              className="bg-[#202526] border text-center max-md:text-sm border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-3 flex items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 shadow-black/30 text-white mx-auto uppercase font-normal"
             >
               <span>Открыть в Яндекс Картах</span>
             </Link>
             <Link
               href={googleMap}
               target="_blank"
-              className="bg-[#202526] border text-center max-md:text-sm border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-10 flex items-center justify-center shadow-lg shadow-black/30 text-white mx-auto uppercase font-normal"
+              className="bg-[#202526] border text-center max-md:text-sm border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-10 flex items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 shadow-black/30 text-white mx-auto uppercase font-normal"
             >
               <span>Открыть в Google Maps</span>
             </Link>

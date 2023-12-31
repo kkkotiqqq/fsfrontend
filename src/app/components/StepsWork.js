@@ -154,7 +154,7 @@ export default function FullSlider() {
 
           <Link
             href="/contacts"
-            className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 text-white mx-auto mt-6 uppercase text-sm xl:text-xl text-center"
+            className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[760px] flex items-center justify-center shadow-lg shadow-yellow-500 transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 text-white mx-auto mt-6 uppercase text-sm xl:text-xl text-center"
           >
             <span>ОФОРМИТЬ индивидуальный заказ</span>
           </Link>
