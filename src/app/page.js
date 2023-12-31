@@ -3,6 +3,7 @@ import Link from "next/link";
 import FullSlider from "./components/FullSlider";
 import StepsWork from "./components/StepsWork";
 import ProductsCatalog from "./components/ProductsCatalog";
+import ProductsCatalogWP from "./components/ProductsCatalogWP";
 
 async function getHomeInfo() {
   const res = await fetch(
@@ -19,8 +20,22 @@ async function getHomeInfo() {
   return res.json();
 }
 
+// async function getProductsWP() {
+//   const res = await fetch(`https://fsladmin.paxcore.ru/wp-json/wp/v2/product`, {
+//     next: { revalidate: 60 },
+//   });
+
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
+
+//   return res.json();
+// }
+
 export default async function Home() {
   const homeInfoResponse = await getHomeInfo();
+  // const productsWP = await getProductsWP();
+
   const {
     aboutUs,
     desc1Title,
@@ -43,6 +58,22 @@ export default async function Home() {
               />
             </svg>
           </div>
+        </div>
+
+        <div>
+          <pre
+            style={{
+              color: "blue",
+              background: "#f0f0f0",
+              padding: "10px",
+              borderRadius: "10px",
+              fontSize: "16px",
+            }}
+          >
+            {/* {JSON.stringify(productsWP, null, 2)} */}
+          </pre>
+
+          <ProductsCatalogWP />
         </div>
 
         <section className="mt-8 mb-8">

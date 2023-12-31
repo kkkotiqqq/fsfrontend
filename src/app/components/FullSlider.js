@@ -29,24 +29,22 @@ const FullSlider = (slides) => {
     >
       {slides &&
         slides.slides.map((slide, index) => (
-          <>
-            <SwiperSlide
-              key={slide.id}
-              style={{
-                backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_URL}${slide.image.data.attributes.url}')`,
-              }}
-              className="h-full w-full bg-cover bg-center"
-            >
-              <div className="flex flex-col items-center justify-center h-full w-full px-4">
-                <h1 className="text-white uppercase text-xl font-extralight text-center lg:text-[55px] [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)] bg-black bg-opacity-60 rounded-xl px-7 lg:leading-[50px] py-3">
-                  {slide.title}
-                </h1>
-                <div className="text-white text-center mt-1 uppercase font-extralight text-lg lg:text-2xl [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)] bg-black bg-opacity-60 rounded-xl px-5">
-                  {slide.subtitle}
-                </div>
+          <SwiperSlide
+            key={slide.id}
+            style={{
+              backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_URL}${slide.image.data.attributes.url}')`,
+            }}
+            className="h-full w-full bg-cover bg-center"
+          >
+            <div className="flex flex-col items-center justify-center h-full w-full px-4">
+              <h1 className="text-white uppercase text-xl font-extralight text-center lg:text-[55px] [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)] bg-black bg-opacity-60 rounded-xl px-7 lg:leading-[50px] py-3">
+                {slide.title}
+              </h1>
+              <div className="text-white text-center mt-1 uppercase font-extralight text-lg lg:text-2xl [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)] bg-black bg-opacity-60 rounded-xl px-5">
+                {slide.subtitle}
               </div>
-            </SwiperSlide>
-          </>
+            </div>
+          </SwiperSlide>
         ))}
     </Swiper>
   );
