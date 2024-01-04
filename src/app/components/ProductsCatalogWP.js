@@ -3,12 +3,11 @@ import Image from "next/image";
 import React from "react";
 
 async function getProductsWP() {
-  const res = await fetch(
-    `https://fsladmin.paxcore.ru/wp-json/wp/v2/product?_embed`,
-    {
-      next: { revalidate: 60 },
-    }
-  );
+  const url = `https://fsladmin.paxcore.ru/wp-json/wp/v2/product?_embed&per_page=${perPage}`;
+
+  const res = await fetch(url, {
+    next: { revalidate: 60 },
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -29,22 +28,29 @@ export default async function ProductsCatalog() {
               <React.Fragment key={index}>
                 <Link
                   href={`/productswp/${product.id}`}
-                  className={`w-full h-full min-h-[230px] xl:min-h-[385px] bg-[#323232] ${
+                  className={`w-full h-full min-h-[230px] relative xl:min-h-[385px] bg-[#323232] ${
                     index === 0 || index === 5
                       ? "lg:col-span-2 lg:row-span-2"
                       : ""
                   }  flex flex-col justify-end bg-center bg-cover hover:scale-[1.02] transition-transform`}
-                  style={{
-                    backgroundImage:
-                      product._embedded &&
-                      product._embedded["wp:featuredmedia"] &&
-                      product._embedded["wp:featuredmedia"][0] &&
-                      product._embedded["wp:featuredmedia"][0].source_url
-                        ? `url(${product._embedded["wp:featuredmedia"][0].source_url})`
-                        : "none", // или указать URL изображения по умолчанию
-                  }}
+                  // style={{
+                  //   backgroundImage:
+                  //     product._embedded &&
+                  //     product._embedded["wp:featuredmedia"] &&
+                  //     product._embedded["wp:featuredmedia"][0] &&
+                  //     product._embedded["wp:featuredmedia"][0].source_url
+                  //       ? `url(${product._embedded["wp:featuredmedia"][0].source_url})`
+                  //       : "none", // или указать URL изображения по умолчанию
+                  // }}
                   // key={index}
                 >
+                  <div className="absolute w-full h-full top-0 left-0 z-0">
+                    <Image
+                      src={product._embedded["wp:featuredmedia"][0].source_url}
+                      fill
+                      className=""
+                    />
+                  </div>
                   <div className="bg-black bg-opacity-70 text-white text-center text-xl py-2 relative">
                     <span>{product.title.rendered}</span>
                     <svg
@@ -101,7 +107,7 @@ export default async function ProductsCatalog() {
             ))}
 
           <Link
-            href="/product"
+            href="/contacts"
             className="w-full h-full min-h-[230px] xl:min-h-[385px] bg-[#323232] flex flex-col bg-center bg-cover hover:scale-[1.02] transition-transform"
           >
             <div className="text-white p-5">

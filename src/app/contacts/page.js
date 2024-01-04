@@ -4,7 +4,7 @@ import ContactForm from "../components/ContactForm";
 
 async function getContacts() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/contact`,
+    `https://fsladmin.paxcore.ru/wp-json/wp/v2/pages/61`,
     {
       next: { revalidate: 60 },
     }
@@ -21,15 +21,16 @@ export default async function Contacts() {
   const contactsResponse = await getContacts();
   const {
     phone,
-    phoneCode,
+    phone_code,
     email,
     telegram,
     whatsapp,
     pinterest,
     address,
-    yandexMap,
-    googleMap,
-  } = contactsResponse.data.attributes;
+    yandex_map,
+    google_map,
+    map_image,
+  } = contactsResponse.acf;
 
   return (
     <main className="flex min-h-screen flex-col justify-between overflow-hidden -mb-20">
@@ -44,7 +45,7 @@ export default async function Contacts() {
               Купите свет прямо сейчас
             </div>
             <Link
-              href={`tel:${phoneCode}`}
+              href={`tel:${phone_code}`}
               className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-4 lg:mb-10 flex items-center justify-center shadow-lg shadow-black/30 text-white transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 mx-auto uppercase font-normal gap-1"
             >
               <span className="max-lg:hidden">Позвонить: </span>
@@ -100,14 +101,14 @@ export default async function Contacts() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 max-w-4xl mx-auto">
             <Link
-              href={yandexMap}
+              href={yandex_map}
               target="_blank"
               className="bg-[#202526] border text-center max-md:text-sm border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-3 flex items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 shadow-black/30 text-white mx-auto uppercase font-normal"
             >
               <span>Открыть в Яндекс Картах</span>
             </Link>
             <Link
-              href={googleMap}
+              href={google_map}
               target="_blank"
               className="bg-[#202526] border text-center max-md:text-sm border-[#FFFBC6] rounded-[10px] h-[50px] w-full mb-10 flex items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 shadow-black/30 text-white mx-auto uppercase font-normal"
             >

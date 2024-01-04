@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function SiteHeader({ phone, phoneCode }) {
+export default function SiteHeader({ phone, phone_code }) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const HomeClass = isHomePage
@@ -63,7 +63,7 @@ export default function SiteHeader({ phone, phoneCode }) {
             </li>
           </ul>
           <Link
-            href="tel:000000000"
+            href={`tel:${phone_code}`}
             className="ml-auto bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[285px] flex items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] hover:shadow-yellow-500 shadow-yellow-500 text-white max-xl:hidden"
           >
             <span>{phone}</span>

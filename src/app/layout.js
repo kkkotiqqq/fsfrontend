@@ -16,7 +16,7 @@ export const metadata = {
 
 async function getContacts() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/contact`,
+    `https://fsladmin.paxcore.ru/wp-json/wp/v2/pages/61`,
     {
       next: { revalidate: 60 },
     }
@@ -31,19 +31,19 @@ async function getContacts() {
 
 export default async function RootLayout({ children }) {
   const contactsResponse = await getContacts();
-  const { phone, phoneCode, email, telegram, whatsapp, pinterest } =
-    contactsResponse.data.attributes;
+  const { phone, phone_code, email, telegram, whatsapp, pinterest } =
+    contactsResponse.acf;
 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SiteHeader phone={phone} phoneCode={phoneCode} />
+        <SiteHeader phone={phone} phoneCode={phone_code} />
 
         <div className="pt-20 xl:pt-40">{children}</div>
 
         <SiteFooter
           phone={phone}
-          phoneCode={phoneCode}
+          phoneCode={phone_code}
           email={email}
           telegram={telegram}
           whatsapp={whatsapp}

@@ -30,21 +30,28 @@ export default async function Products() {
               <React.Fragment key={index}>
                 <Link
                   href={`/products/${product.id}`}
-                  className={`w-full h-full min-h-[230px] xl:min-h-[385px] bg-[#323232] ${
+                  className={`w-full h-full min-h-[230px] xl:min-h-[385px] bg-[#323232] relative ${
                     index === 0 || index === 5
                       ? "lg:col-span-2 lg:row-span-2"
                       : ""
                   }  flex flex-col justify-end bg-center bg-cover hover:scale-[1.02] transition-transform`}
-                  style={{
-                    backgroundImage:
-                      product.attributes.cover &&
-                      product.attributes.cover.data &&
-                      product.attributes.cover.data.attributes.url
-                        ? `url(${process.env.NEXT_PUBLIC_BASE_URL}${product.attributes.cover.data.attributes.url})`
-                        : "none", // или указать URL изображения по умолчанию
-                  }}
+                  // style={{
+                  //   backgroundImage:
+                  //     product.attributes.cover &&
+                  //     product.attributes.cover.data &&
+                  //     product.attributes.cover.data.attributes.url
+                  //       ? `url(${process.env.NEXT_PUBLIC_BASE_URL}${product.attributes.cover.data.attributes.url})`
+                  //       : "none", // или указать URL изображения по умолчанию
+                  // }}
                   // key={index}
                 >
+                  <div className="absolute w-full h-full top-0 left-0 z-0">
+                    <Image
+                      src={product._embedded["wp:featuredmedia"][0].source_url}
+                      fill
+                      className=""
+                    />
+                  </div>
                   <div className="bg-black bg-opacity-70 text-white text-center text-xl py-2 relative">
                     <span>{product.attributes.title}</span>
                     <svg

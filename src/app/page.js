@@ -7,7 +7,7 @@ import ProductsCatalogWP from "./components/ProductsCatalogWP";
 
 async function getHomeInfo() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}${process.env.NEXT_PUBLIC_API_PATH}/home?populate[fullscreenBanner][populate]=image`,
+    `https://fsladmin.paxcore.ru/wp-json/wp/v2/pages/59`,
     {
       cache: "force-cache",
     }
@@ -37,18 +37,19 @@ export default async function Home() {
   // const productsWP = await getProductsWP();
 
   const {
-    aboutUs,
-    desc1Title,
-    desc1Content,
-    desc2Title,
-    desc2Content,
-    fullscreenBanner,
-  } = homeInfoResponse.data.attributes;
+    about_us,
+    desc1title,
+    desc1content,
+    desc2title,
+    desc2content,
+    home_slider,
+    pdf_link,
+  } = homeInfoResponse.acf;
   return (
     <main className="flex min-h-screen flex-col justify-between -mt-4 lg:-mt-40">
       <div className="">
         <div className="bg-gray-200 relative">
-          <FullSlider slides={fullscreenBanner} />
+          <FullSlider slides={home_slider} />
 
           <div className="absolute bottom-10 left-1/2 -ml-2 z-10 max-md:hidden">
             <svg width="16" height="44" viewBox="0 0 16 44" fill="none">
@@ -88,37 +89,29 @@ export default async function Home() {
             </div>
             <div className="col-span-1 lg:col-span-4 max-2xl:px-5 lg:pr-14 py-6">
               <h2 className="uppercase text-2xl lg:text-[50px] font-extralight mb-3 lg:mb-10 mt-1 lg:mt-8">
-                {desc1Title}
+                {desc1title}
               </h2>
 
-              {desc1Content.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="font-light lg:text-xl mb-5 lg:leading-10"
-                >
-                  {paragraph.children.map((child, childIndex) => (
-                    <span key={childIndex}>{child.text}</span>
-                  ))}
-                </p>
-              ))}
+              <div
+                className="flex flex-col gap-7 lg:text-xl lg:leading-10"
+                dangerouslySetInnerHTML={{
+                  __html: desc1content,
+                }}
+              />
             </div>
           </div>
 
           <div className="grid 2xl:grid-cols-7 lg:mt-6 max-lg:px-4 gap-x-5">
             <div className="col-span-6 2xl:col-span-3 max-lg:mt-3 max-2xl:order-2 lg:pl-4 2xl:pl-40">
               <h2 className="uppercase text-2xl lg:text-[50px] font-extralight mb-3 lg:mb-10 mt-2 lg:mt-8">
-                {desc2Title}
+                {desc2title}
               </h2>
-              {desc2Content.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="font-light lg:text-xl mb-5 lg:leading-10"
-                >
-                  {paragraph.children.map((child, childIndex) => (
-                    <span key={childIndex}>{child.text}</span>
-                  ))}
-                </p>
-              ))}
+              <div
+                className="flex flex-col gap-7 lg:text-xl lg:leading-10"
+                dangerouslySetInnerHTML={{
+                  __html: desc2content,
+                }}
+              />
             </div>
             <div className="col-span-6 2xl:col-span-4">
               <Image
@@ -153,16 +146,12 @@ export default async function Home() {
               О нас
             </h3>
 
-            {aboutUs.map((paragraph, index) => (
-              <p
-                key={index}
-                className="font-light lg:text-xl lg:leading-10 mb-5"
-              >
-                {paragraph.children.map((child, childIndex) => (
-                  <span key={childIndex}>{child.text}</span>
-                ))}
-              </p>
-            ))}
+            <div
+              className="flex flex-col gap-7 lg:text-xl lg:leading-10"
+              dangerouslySetInnerHTML={{
+                __html: about_us,
+              }}
+            />
           </div>
 
           <div className="bg-[#323232] col-span-1 lg:col-span-3 text-white p-4 lg:p-8">
