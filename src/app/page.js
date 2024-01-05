@@ -125,7 +125,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <ProductsCatalogWP />
+        <ProductsCatalogWP numberPosts={8} />
 
         <div className="container mx-auto mb-16">
           <Link

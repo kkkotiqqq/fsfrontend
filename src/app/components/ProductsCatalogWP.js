@@ -2,8 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
-async function getProductsWP() {
-  const url = `https://fsladmin.paxcore.ru/wp-json/wp/v2/product?_embed&per_page=${perPage}`;
+async function getProductsWP(numberOfPosts) {
+  const url = numberOfPosts
+    ? `https://fsladmin.paxcore.ru/wp-json/wp/v2/product?_embed&per_page=${numberOfPosts}`
+    : "https://fsladmin.paxcore.ru/wp-json/wp/v2/product?_embed";
 
   const res = await fetch(url, {
     next: { revalidate: 60 },
@@ -16,8 +18,8 @@ async function getProductsWP() {
   return res.json();
 }
 
-export default async function ProductsCatalog() {
-  const products = await getProductsWP();
+export default async function ProductsCatalogWP({ numberPosts }) {
+  const products = await getProductsWP(numberPosts);
 
   return (
     <>
