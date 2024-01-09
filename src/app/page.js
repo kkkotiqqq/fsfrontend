@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FullSlider from "./components/FullSlider";
 import StepsWork from "./components/StepsWork";
-import ProductsCatalog from "./components/ProductsCatalog";
+// import ProductsCatalog from "./components/ProductsCatalog";
 import ProductsCatalogWP from "./components/ProductsCatalogWP";
 
 async function getHomeInfo() {
