@@ -5,7 +5,7 @@ export async function getCategoryName(categoryId) {
   const url = `https://fsladmin.paxcore.ru/wp-json/wp/v2/productcat/${categoryId}`;
 
   const response = await fetch(url, {
-    next: { revalidate: 3000 },
+    next: { revalidate: 60 },
   });
 
   if (!response.ok) {

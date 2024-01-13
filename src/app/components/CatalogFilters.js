@@ -9,7 +9,7 @@ export default function CatalogFilters() {
 
   return (
     <>
-      <div className="container grid grid-cols-2 gap-5 mb-6 lg:mb-10">
+      <div className="container grid xl:grid-cols-2 gap-5 mb-6 lg:mb-10">
         <button
           onClick={() => {
             setShowFirst(true);
@@ -61,7 +61,7 @@ export default function CatalogFilters() {
         </button>
       </div>
       {showFirst && (
-        <div className="container category-designers grid grid-cols-3 gap-5 mb-6 lg:mb-10">
+        <div className="container category-designers grid grid-cols-2 lg:grid-cols-3 gap-5 mb-6 lg:mb-10">
           <Link
             href={"/category/3"}
             className="text-center flex items-center justify-center bg-gray-200 hover:bg-gray-300 transition-all font-semibold max-lg:text-sm text-gray-600 h-11 rounded-lg"
@@ -102,7 +102,7 @@ export default function CatalogFilters() {
       )}
 
       {showSecond && (
-        <div className="container category-proms grid grid-cols-4 gap-5 mb-6 lg:mb-10">
+        <div className="container category-proms grid grid-cols-2 lg:grid-cols-4 gap-5 mb-6 lg:mb-10">
           <Link
             href={"/category/4"}
             className="text-center flex items-center justify-center bg-gray-200 hover:bg-gray-300 transition-all font-semibold max-lg:text-sm text-gray-600 h-11 rounded-lg "

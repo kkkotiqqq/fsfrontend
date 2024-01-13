@@ -9,7 +9,7 @@ async function getHomeInfo() {
   const res = await fetch(
     `https://fsladmin.paxcore.ru/wp-json/wp/v2/pages/59`,
     {
-      cache: "force-cache",
+      next: { revalidate: 60 },
     }
   );
 

@@ -7,7 +7,7 @@ async function getPdf() {
   const url = `https://fsladmin.paxcore.ru/wp-json/wp/v2/pages/59`;
 
   const res = await fetch(url, {
-    next: { revalidate: 3000 },
+    next: { revalidate: 60 },
   });
 
   if (!res.ok) {

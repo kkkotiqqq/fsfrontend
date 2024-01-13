@@ -95,11 +95,18 @@ export default async function Contacts() {
         </div>
       </div>
       <div
-        style={{ backgroundImage: "url('map.png')" }}
-        className="pt-5 lg:pt-10 h-[400px] lg:h-screen bg-cover max-h-[860px] mt-[70px] bg-center"
+        // style={{ backgroundImage: "url('map.png')" }}
+        className=" h-[400px] bg-cover lg:h-[500px] mt-[40px] bg-center relative"
       >
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 max-w-4xl mx-auto">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A1742a9787d6f0eba95c9e83cd91ba55a1e1a16febf35a430ea2a64534daa6c37&amp;source=constructor"
+          width="100%"
+          height="500"
+          frameBorder="0"
+          className="relative z-0"
+        ></iframe>
+        <div className="absolute z-10 left-0 top-5 !w-full">
+          <div className="px-3 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5 max-w-4xl mx-auto w-full">
             <Link
               href={yandex_map}
               target="_blank"
