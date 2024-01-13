@@ -77,3 +77,7 @@ body {
 .popup-content {
   @apply !border-none !bg-transparent !w-full;
 }
+
+.category-page .catalogabs {
+  @apply !hidden;
+}

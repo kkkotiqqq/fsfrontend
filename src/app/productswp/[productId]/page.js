@@ -50,7 +50,26 @@ export default async function Product({ params: { productId } }) {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col justify-between">
+      <main className="flex min-h-screen flex-col relative">
+        <Link
+          href={"/productswp"}
+          className="bg-[#202526] border border-[#FFFBC6] rounded-[10px] h-[48px] w-full max-w-[285px] flex max-2xl:flex-row-reverse gap-3 items-center justify-center shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] 2xl:absolute 2xl:-left-[35px] 2xl:top-[140px] hover:shadow-yellow-500 shadow-yellow-500 text-white 2xl:-rotate-90 max-2xl:mb-5 max-2xl:-mt-1 max-sm:max-w-[170px] max-sm:text-sm max-sm:h-10 max-2xl:ml-3"
+        >
+          <span>Назад в каталог</span>
+
+          <svg
+            width="15"
+            height="8"
+            viewBox="0 0 15 8"
+            fill="none"
+            className="ml-3 rotate-0 2xl:rotate-90"
+          >
+            <path
+              d="M0.646446 3.64645C0.451184 3.84171 0.451184 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM15 3.5L1 3.5V4.5L15 4.5V3.5Z"
+              fill="white"
+            />
+          </svg>
+        </Link>
         <div className="container grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div>
             <div className="max-w-[780px] mx-auto">

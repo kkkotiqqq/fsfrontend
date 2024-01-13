@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import CatalogFilters from "../components/CatalogFilters";
 
 async function getProductsWP() {
   const res = await fetch(
@@ -24,6 +25,7 @@ export default async function ProductsWP() {
   return (
     <>
       <section className="relative">
+        <CatalogFilters />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 container gap-5">
           {products &&
             products.flatMap((product, index) => (

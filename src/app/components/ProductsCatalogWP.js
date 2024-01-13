@@ -1,25 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import { getProducts } from "../actions/getProducts";
 
-async function getProductsWP(numberOfPosts) {
-  const url = numberOfPosts
-    ? `https://fsladmin.paxcore.ru/wp-json/wp/v2/product?_embed&per_page=${numberOfPosts}`
-    : "https://fsladmin.paxcore.ru/wp-json/wp/v2/product?_embed";
+async function getPdf() {
+  const url = `https://fsladmin.paxcore.ru/wp-json/wp/v2/pages/59`;
 
   const res = await fetch(url, {
-    next: { revalidate: 60 },
+    next: { revalidate: 3000 },
   });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
+  const data = await res.json();
+
+  // Проверка на наличие поля catalog_pdf в ответе
+
+  return data.acf.catalog_pdf; // Возвращаем только ссылку на PDF файл
 }
 
-export default async function ProductsCatalogWP({ numberPosts }) {
-  const products = await getProductsWP(numberPosts);
+export default async function ProductsCatalogWP({ numberOfPosts, categoryId }) {
+  const products = await getProducts(numberOfPosts, categoryId);
+
+  const pdflink = await getPdf();
 
   return (
     <>
@@ -35,22 +40,12 @@ export default async function ProductsCatalogWP({ numberPosts }) {
                       ? "lg:col-span-2 lg:row-span-2"
                       : ""
                   }  flex flex-col justify-end bg-center bg-cover hover:scale-[1.02] transition-transform`}
-                  // style={{
-                  //   backgroundImage:
-                  //     product._embedded &&
-                  //     product._embedded["wp:featuredmedia"] &&
-                  //     product._embedded["wp:featuredmedia"][0] &&
-                  //     product._embedded["wp:featuredmedia"][0].source_url
-                  //       ? `url(${product._embedded["wp:featuredmedia"][0].source_url})`
-                  //       : "none", // или указать URL изображения по умолчанию
-                  // }}
-                  // key={index}
                 >
                   <div className="absolute w-full h-full top-0 left-0 z-0">
                     <Image
                       src={product._embedded["wp:featuredmedia"][0].source_url}
                       fill
-                      className=""
+                      className="object-cover object-center"
                     />
                   </div>
                   <div className="bg-black bg-opacity-70 text-white text-center text-xl py-2 relative">
@@ -71,7 +66,8 @@ export default async function ProductsCatalogWP({ numberPosts }) {
                 </Link>
                 {index === 3 && (
                   <Link
-                    href="/product"
+                    href={pdflink}
+                    target="_blank"
                     className="w-full h-full min-h-[230px] xl:min-h-[385px] bg-[#323232] flex flex-col bg-center bg-cover hover:scale-[1.02] transition-transform"
                     key={`pdf-item`}
                   >
@@ -139,7 +135,7 @@ export default async function ProductsCatalogWP({ numberPosts }) {
             </div>
           </Link>
         </div>
-        <div className="absolute h-full p-8 tracking-[8px] [writing-mode:vertical-lr] text-[55px] right-0 top-0 leading-[67px] uppercase opacity-50 text-[#9C9C9C] font-thin [text-shadow:_0_1px_10px_rgb(255_255_255_/_80%)] origin-top-right max-2xl:hidden">
+        <div className="catalogabs absolute h-full p-8 tracking-[8px] [writing-mode:vertical-lr] text-[55px] right-0 top-0 leading-[67px] uppercase opacity-50 text-[#9C9C9C] font-thin [text-shadow:_0_1px_10px_rgb(255_255_255_/_80%)] origin-top-right max-2xl:hidden">
           Искусство света, созданное для вас
         </div>
       </section>

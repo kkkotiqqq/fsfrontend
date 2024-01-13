@@ -43,16 +43,54 @@ export default async function Home() {
     desc2title,
     desc2content,
     home_slider,
-    pdf_link,
+    catalog_pdf,
+    home_video,
+    video_title,
+    video_subtitle,
   } = homeInfoResponse.acf;
   return (
-    <main className="flex min-h-screen flex-col justify-between -mt-4 lg:-mt-40">
+    <main className="flex min-h-screen flex-col justify-between -mt-4 lg:-mt-40 overflow-hidden">
       <div className="">
-        <div className="bg-gray-200 relative">
-          <FullSlider slides={home_slider} />
+        <div className="relative w-full flex flex-col items-center justify-center h-[400px] md:h-[600px] lg:h-screen overflow-hidden">
+          <div className="absolute w-full h-full top-0 left-0 z-0">
+            <video
+              className="object-cover object-center max-w-none w-full h-full"
+              src={home_video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              // poster="/facvideo1.png"
+            ></video>
+          </div>
 
-          <div className="absolute bottom-10 left-1/2 -ml-2 z-10 max-md:hidden">
-            <svg width="16" height="44" viewBox="0 0 16 44" fill="none">
+          <div className="absolute inset-0 bg-black bg-opacity-40 z-10 w-full h-full"></div>
+
+          <div className="px-3 relative z-10">
+            {video_title && (
+              <div className="text-white uppercase text-xl font-extralight text-center lg:text-[55px] [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)] bg-black bg-opacity-60 rounded-xl px-7 lg:leading-[50px] py-3 z-10">
+                {video_title}
+              </div>
+            )}
+            {video_subtitle && (
+              <div className="text-white text-center mt-1 uppercase font-extralight text-lg lg:text-2xl [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)] bg-black bg-opacity-60 rounded-xl px-5 z-10">
+                {video_subtitle}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="bg-gray-200 relative">
+          {/* <FullSlider slides={home_slider} /> */}
+
+          <div className="absolute bottom-3 lg:bottom-10 left-1/2 -ml-2 z-10 ">
+            <svg
+              width="16"
+              height="44"
+              viewBox="0 0 16 44"
+              fill="none"
+              className="animate-bounce"
+            >
               <path
                 d="M7.29289 43.7071C7.68342 44.0976 8.31658 44.0976 8.7071 43.7071L15.0711 37.3431C15.4616 36.9526 15.4616 36.3195 15.0711 35.9289C14.6805 35.5384 14.0474 35.5384 13.6569 35.9289L8 41.5858L2.34314 35.9289C1.95262 35.5384 1.31946 35.5384 0.928931 35.9289C0.538406 36.3195 0.538406 36.9526 0.928931 37.3431L7.29289 43.7071ZM7 -4.37114e-08L7 43L9 43L9 4.37114e-08L7 -4.37114e-08Z"
                 fill="#FDEB04"
@@ -77,7 +115,7 @@ export default async function Home() {
 
         <section className="mt-8 mb-8">
           <div className="grid 2xl:grid-cols-7 gap-x-5">
-            <div className="col-span-1 2xl:col-span-3 max-lg:px-4">
+            <div className="col-span-1 lg:col-span-3 max-lg:px-4">
               <Image
                 src={"/home1.png"}
                 width={738}
@@ -125,7 +163,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <ProductsCatalogWP numberPosts={8} />
+        <ProductsCatalogWP numberOfPosts={8} />
 
         <div className="container mx-auto mb-16">
           <Link

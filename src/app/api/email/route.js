@@ -37,7 +37,7 @@ async function POST(request) {
     new Promise((resolve, reject) => {
       transport.sendMail(mailOptions, function (err) {
         if (!err) {
-          resolve("Email sent");
+          resolve("Отправлено");
         } else {
           reject(err.message);
         }
