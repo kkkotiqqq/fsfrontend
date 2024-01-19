@@ -56,8 +56,9 @@ export default async function Home() {
             <video
               className="object-cover object-center max-w-none w-full h-full"
               src={home_video}
-              autoPlay
-              loop
+              autoPlay={true}
+              loop={true}
+              controls={false}
               muted
               playsInline
               // poster="/facvideo1.png"
@@ -201,7 +202,7 @@ export default async function Home() {
               Сотрудничайте с нами
             </div>
             <Link
-              href={"/partners"}
+              href="/partners"
               className="text-[#FDEB04] uppercase text-xl tracking-[8px] hover:tracking-wider transition-all font-extralight mt-8 lg:mt-16 block"
             >
               <svg

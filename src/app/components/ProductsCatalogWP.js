@@ -42,11 +42,19 @@ export default async function ProductsCatalogWP({ numberOfPosts, categoryId }) {
                   }  flex flex-col justify-end bg-center bg-cover hover:scale-[1.02] transition-transform`}
                 >
                   <div className="absolute w-full h-full top-0 left-0 z-0">
-                    <Image
-                      src={product._embedded["wp:featuredmedia"][0].source_url}
-                      fill
-                      className="object-cover object-center"
-                    />
+                    {product &&
+                      product._embedded &&
+                      product._embedded["wp:featuredmedia"] &&
+                      product._embedded["wp:featuredmedia"][0] &&
+                      product._embedded["wp:featuredmedia"][0].source_url && (
+                        <Image
+                          src={
+                            product._embedded["wp:featuredmedia"][0].source_url
+                          }
+                          fill
+                          className="object-cover object-center"
+                        />
+                      )}
                   </div>
                   <div className="bg-black bg-opacity-70 text-white text-center text-xl py-2 relative">
                     <span>{product.title.rendered}</span>
@@ -66,7 +74,7 @@ export default async function ProductsCatalogWP({ numberOfPosts, categoryId }) {
                 </Link>
                 {index === 3 && (
                   <Link
-                    href={pdflink}
+                    href={pdflink ? pdflink : "#"}
                     target="_blank"
                     className="w-full h-full min-h-[230px] xl:min-h-[385px] bg-[#323232] flex flex-col bg-center bg-cover hover:scale-[1.02] transition-transform"
                     key={`pdf-item`}
